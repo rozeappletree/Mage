@@ -133,6 +133,18 @@ Each model is self-contained in its own directory with a dedicated README:
 - **Mage-VL-Cowork** — project overview, training recipe, and results → **[`mage_vl_cowork/README.md`](mage_vl_cowork/README.md)**
 - **Mage-Flow** — installation, Python API, CLI, prompt enhancement, Gradio app → **[`mage_flow/README.md`](mage_flow/README.md)**
 
+### Run Mage-VL-Cowork locally (Windows, 4 GB GPU)
+
+A ready-made launcher lives in [`mage_vl_cowork/local/`](mage_vl_cowork/local/). On first run it creates a `.venv`, installs PyTorch (CUDA 12.4) and the dependencies, downloads `microsoft/Mage-VL-Cowork` (~10 GB), then opens a GUI. Later runs just open the GUI.
+
+```powershell
+cd Mage\mage_vl_cowork\local
+powershell -ExecutionPolicy Bypass -File .\run.ps1     # or double-click run.bat
+# force re-setup: .\run.ps1 -Reset
+```
+
+Notes: the model is loaded in 4-bit with CPU offload, so each step takes several minutes on a 4 GB GPU. `transformers` is pinned to `4.57.3` in `requirements.txt` (newer versions fail to load the weights). The app controls your mouse and keyboard; move the mouse to a screen corner to abort.
+
 ## 📝 Citation
 
 ```bibtex

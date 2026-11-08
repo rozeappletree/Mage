@@ -1,0 +1,8 @@
+transformers==4.57.3
+accelerate
+bitsandbytes>=0.45
+huggingface_hub
+pillow
+pyautogui
+pyperclip
+qwen-vl-utils
